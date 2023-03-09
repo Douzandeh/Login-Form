@@ -1,32 +1,35 @@
-let userNameMessage = document.querySelector(".username-validation")
-let passwordMessage = document.querySelector(".password-validation")
+let $ = document;
 
-let usernameInput = document.querySelector('.username')
+let usernameInput = $.querySelector(".username");
 
-let passwordInput = document.querySelector('.password')
+let passwordInput = $.querySelector(".password");
 
-function usernameValidation (){
-	// alert('username')
+let usernameMessage = $.querySelector(".username-validation");
+
+let passwordMessage = $.querySelector(".password-validation");
+
+function usernameValidation(){
+	// console.log("test");
 	if (usernameInput.value.length < 12) {
-		userNameMessage.style.color = 'red';
-		userNameMessage.innerHTML = "Most Contain 12 Character (Min)";
-		userNameMessage.style.display = "block";
+		usernameMessage.innerHTML = "Must Contain 12 Character (Min)";
+		usernameMessage.style.color = "red";
+		usernameMessage.style.display = "block";
 	}else {
-		userNameMessage.style.color = 'green';
-		userNameMessage.innerHTML = "Correct Username Value";
-		userNameMessage.style.display = "block";
+		usernameMessage.innerHTML = "Correct username Value";
+		usernameMessage.style.color = "green";
+		usernameMessage.style.display = "block";
+
 	}
 }
 
-function passwordValidation (){
-	// alert('password')
+function passwordValidation(){
 	if (passwordInput.value.length < 8) {
-		passwordMessage.style.color = 'red';
-		passwordMessage.innerHTML = "Most Contain 8 Character (Min)";
+		passwordMessage.innerHTML = "Must Contain 8 Character (Min)";
+		passwordMessage.style.color = "red";
 		passwordMessage.style.display = "block";
 	}else {
-		passwordMessage.style.color = 'green';
 		passwordMessage.innerHTML = "Correct password Value";
+		passwordMessage.style.color = "green";
+		passwordMessage.style.display = "block";
 	}
-	
 }
