@@ -1,27 +1,32 @@
-let userNameInput = document.querySelector(".username")
+let userNameMessage = document.querySelector(".username-validation")
+let passwordMessage = document.querySelector(".password-validation")
 
-let passwordInput = document.querySelector(".password")
+let usernameInput = document.querySelector('.username')
 
-let modal = document.querySelector(".modal")
+let passwordInput = document.querySelector('.password')
 
-function dataValidation() {
-	let userNameValue = userNameInput.value
-	let passwordValue = passwordInput.value
-
-	if (userNameValue.length < 12 || passwordValue.length < 8) {
-		// alert('Error')
-		modal.style.background = "rgb(223, 28, 28)";
-		modal.innerHTML = "Please enter the required information correctly";
-		modal.style.display = 'inline';
+function usernameValidation (){
+	// alert('username')
+	if (usernameInput.value.length < 12) {
+		userNameMessage.style.color = 'red';
+		userNameMessage.innerHTML = "Most Contain 12 Character (Min)";
+		userNameMessage.style.display = "block";
 	}else {
-		modal.style.background = "green";
-		modal.innerHTML = "done successfully";
-		modal.style.display = "inline";
+		userNameMessage.style.color = 'green';
+		userNameMessage.innerHTML = "Correct Username Value";
+		userNameMessage.style.display = "block";
 	}
+}
 
-	setTimeout(function(){
-		modal.style.display = 'none';
-		},3000)
+function passwordValidation (){
+	// alert('password')
+	if (passwordInput.value.length < 8) {
+		passwordMessage.style.color = 'red';
+		passwordMessage.innerHTML = "Most Contain 8 Character (Min)";
+		passwordMessage.style.display = "block";
+	}else {
+		passwordMessage.style.color = 'green';
+		passwordMessage.innerHTML = "Correct password Value";
+	}
 	
-	console.log(userNameValue , passwordValue);
 }
